@@ -44,5 +44,5 @@ module.exports = {
     },
     extractCSS: true,
   },
-  buildDir: 'nuxt',
+  buildDir: '.nuxt',
 }
