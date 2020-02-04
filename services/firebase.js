@@ -1,18 +1,17 @@
 import firebase from "firebase";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC-podqTVr9_P_hMU6cNeCYZEyOEC_YrYU",
-  authDomain: "devmentes-3abbf.firebaseapp.com",
-  databaseURL: "https://devmentes-3abbf.firebaseio.com",
-  projectId: "devmentes-3abbf",
-  storageBucket: "devmentes-3abbf.appspot.com",
-  messagingSenderId: "251220467046",
-  appId: "1:251220467046:web:ffffeebcf367033373fca7",
-  measurementId: "G-HVYKKHHQV8"
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  databaseURL: process.env.databaseURL,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId,
+  appId: process.env.appId,
+  measurementId: process.env.measurementId
 };
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-export const postsStorage = firebase.firestore();
