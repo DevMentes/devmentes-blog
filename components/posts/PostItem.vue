@@ -7,10 +7,7 @@
       </div></md-card-header-text
     >
     <md-card-content class="content">
-      <post-owner
-        class="profile"
-        :profile="post.writer"
-      ></post-owner>
+      <post-owner class="profile" :profile="post.writer"></post-owner>
       <post-actions></post-actions>
     </md-card-content>
     <span class="date">Hace 1 día</span>
@@ -40,12 +37,17 @@ export default {
 .margin {
   margin: 10px;
 }
+.zoom {
+  transition: transform 0.4s;
+}
+
 .zoom:hover {
   -ms-transform: scale(1.1); /* IE 9 */
   -webkit-transform: scale(1.1); /* Safari 3-8 */
   transform: scale(1.02);
   box-shadow: 0 8px 10px -2px rgba(0, 0, 0, 0.2),
     0 8px 10px 0 rgba(0, 0, 0, 0.14), 0 8px 10px 0 rgba(0, 0, 0, 0.12);
+  transition-delay: 0.1s;
 }
 
 .title {

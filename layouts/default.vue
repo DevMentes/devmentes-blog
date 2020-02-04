@@ -11,6 +11,8 @@
             >
               <md-icon>menu</md-icon>
             </md-button>
+            <span class="logo small">DM</span>
+            <span class="logo medium">DevMentes</span>
           </div>
           <search></search>
           <div class="md-toolbar-section-end">
@@ -57,18 +59,21 @@
 
       <md-app-content> <nuxt /></md-app-content>
     </md-app>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
 import Search from "../components/search/Search";
 import SimpleAvatar from "../components/ui/avatar/SimpleAvatar";
+import AppFooter from "../components/structure/AppFooter";
 
 export default {
   name: "Default",
   components: {
     Search,
-    SimpleAvatar
+    SimpleAvatar,
+    AppFooter
   },
   data: () => ({
     menuVisible: false,
@@ -90,5 +95,21 @@ html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
   box-sizing: border-box;
+}
+.logo:hover {
+  display: block;
+  cursor: pointer;
+}
+.medium {
+  display: none;
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .small {
+    display: none;
+  }
+  .medium {
+    display: block;
+  }
 }
 </style>

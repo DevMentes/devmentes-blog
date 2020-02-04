@@ -1,20 +1,23 @@
 <template>
   <div>
-    <post-cover :coverUrl="post.cover"></post-cover>
+    <cover-image :coverUrl="post.cover"></cover-image>
     <post-header :post="post"></post-header>
+    <post-body :post="post"></post-body>
   </div>
 </template>
 
 <script>
+import CoverImage from "../../components/structure/CoverImage";
 import { getPostRequest } from "../../requests/postsRequests";
-import PostCover from "../../components/posts/PostCover";
 import PostHeader from "../../components/posts/PostHeader";
+import PostBody from "../../components/posts/PostBody";
 
 export default {
   name: "vue",
   components: {
-    PostCover,
-    PostHeader
+    CoverImage,
+    PostHeader,
+    PostBody
   },
   data: () => ({
     post: {
@@ -23,6 +26,7 @@ export default {
       thumbnail: "",
       cover: "",
       excerpt: "",
+      content: "",
       writer: {
         id: "",
         name: "",
